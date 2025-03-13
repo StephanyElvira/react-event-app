@@ -143,7 +143,7 @@ export const EventsPage = () => {
                   size="lg"
                   color="#DC5F00"
                   textTransform="capitalize"
-                  fontFamily="'Meow Script', serif"
+                  fontFamily=" 'Quicksand', sans-serif"
                   fontWeight="regular"
                   pb={1}
                   _hover={{
