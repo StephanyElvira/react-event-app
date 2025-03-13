@@ -44,8 +44,12 @@ export const EditModalForm = ({
     const fetchData = async () => {
       try {
         const [categoriesRes, usersRes] = await Promise.all([
-          fetch("http://localhost:3000/categories"),
-          fetch("http://localhost:3000/users"),
+          fetch(
+            "https://my-json-server.typicode.com/StephanyElvira/react-event-app/categories"
+          ),
+          fetch(
+            "https://my-json-server.typicode.com/StephanyElvira/react-event-app/users"
+          ),
         ]);
 
         if (!categoriesRes.ok || !usersRes.ok)
@@ -101,7 +105,7 @@ export const EditModalForm = ({
 
     try {
       const response = await fetch(
-        `http://localhost:3000/events/${eventData.id}`,
+        `https://my-json-server.typicode.com/StephanyElvira/react-event-app/events/${eventData.id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },

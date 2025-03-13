@@ -28,9 +28,15 @@ import { EditModalForm } from "../components/EditModalForm";
 export const loader = async ({ params }) => {
   try {
     const [eventRes, usersRes, categoriesRes] = await Promise.all([
-      fetch(`http://localhost:3000/events/${params.eventId}`),
-      fetch("http://localhost:3000/users"),
-      fetch("http://localhost:3000/categories"),
+      fetch(
+        `https://my-json-server.typicode.com/StephanyElvira/react-event-app/events/${params.eventId}`
+      ),
+      fetch(
+        "https://my-json-server.typicode.com/StephanyElvira/react-event-app/users"
+      ),
+      fetch(
+        "https://my-json-server.typicode.com/StephanyElvira/react-event-app/categories"
+      ),
     ]);
 
     if (!eventRes.ok || !usersRes.ok || !categoriesRes.ok) {

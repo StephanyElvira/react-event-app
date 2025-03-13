@@ -25,8 +25,12 @@ import { FilterEvents } from "../components/FilterEvents";
 export const loader = async () => {
   try {
     const [eventRes, categoriesRes] = await Promise.all([
-      fetch("http://localhost:3000/events"),
-      fetch("http://localhost:3000/categories"),
+      fetch(
+        "https://my-json-server.typicode.com/StephanyElvira/react-event-app/events"
+      ),
+      fetch(
+        "https://my-json-server.typicode.com/StephanyElvira/react-event-app/categories"
+      ),
     ]);
     if (!eventRes.ok || !categoriesRes) {
       throw new Error("Failed to load data");

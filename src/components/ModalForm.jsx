@@ -39,8 +39,12 @@ export const ModalForm = ({ isOpen, onClose, onAddEvent }) => {
     const fetchData = async () => {
       try {
         const [categoriesRes, usersRes] = await Promise.all([
-          fetch("http://localhost:3000/categories"),
-          fetch("http://localhost:3000/users"),
+          fetch(
+            "https://my-json-server.typicode.com/StephanyElvira/react-event-app/categories"
+          ),
+          fetch(
+            "https://my-json-server.typicode.com/StephanyElvira/react-event-app/users"
+          ),
         ]);
 
         if (!categoriesRes.ok || !usersRes.ok)
@@ -91,17 +95,20 @@ export const ModalForm = ({ isOpen, onClose, onAddEvent }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3000/events", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          createdBy: formData.createdBy || [],
-          categoryIds: formData.categoryIds || [],
-        }),
-      });
+      const response = await fetch(
+        "https://my-json-server.typicode.com/StephanyElvira/react-event-app/events",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            createdBy: formData.createdBy || [],
+            categoryIds: formData.categoryIds || [],
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to add event");
