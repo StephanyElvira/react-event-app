@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Meow+Script&display=swap");
+
+.nav-link {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #dc5f00;
+  transform: scale(1.1);
+}
